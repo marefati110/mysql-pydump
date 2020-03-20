@@ -25,7 +25,7 @@
 - [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
 
-## 🧐 About <a name = "about"></a.
+## 🧐 About <a name = "about"></a>
     
 mysql_pydump allows you to easily backup your mysql database
 
