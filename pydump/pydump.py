@@ -1,5 +1,4 @@
 import os
-import subprocess
 from datetime import datetime
 
 CONNECTION = {
@@ -21,7 +20,7 @@ def sql_dump(CONNECTION):
         CONNECTION['host'], CONNECTION['username'], CONNECTION['password'], CONNECTION['database'],
         CONNECTION['result'])
     try:
-        subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)
+        os.system(cmd)
         return True
     except Exception as e:
         print(e)
@@ -31,7 +30,7 @@ def sql_dump(CONNECTION):
 def compress(CONNECTION):
     try:
         cmd = "gzip -9 {}.sql".format(CONNECTION['result'])
-        subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)
+        os.system(cmd)
         return True
     except Exception as e:
         print(e)
@@ -66,7 +65,7 @@ def move(CONNECTION):
 
         cmd = 'mkdir -p {}/{}/{}/{}'.format(path,
                                             date_format[0], date_format[1], date_format[2])
-        subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)
+        os.system(cmd)
 
         if 'compress' in CONNECTION.keys():
             if CONNECTION['compress'] == 'True':
@@ -78,7 +77,7 @@ def move(CONNECTION):
 
         cmd = 'mv {}{} {}/{}/{}/{}/"{}{}"'.format(CONNECTION['result'], file_format, path,
                                                   date_format[0], date_format[1], date_format[2], file_name(CONNECTION), file_format)
-        subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)
+        os.system(cmd)
 
         return True
 
@@ -95,8 +94,8 @@ def move(CONNECTION):
 
         cmd = 'mv {}{} {}/"{}{}"'.format(CONNECTION['result'],
                                          file_format, path, file_name(CONNECTION), file_format)
-        subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)
-        
+        os.system(cmd)
+
         return True
     else:
         return False
@@ -134,6 +133,6 @@ def dump(CONNECTION, encryption=False):
         return False
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
-    dump(CONNECTION)
+dump(CONNECTION)
