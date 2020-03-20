@@ -81,5 +81,6 @@ dump(CONFIG)
 ## ✍️ Authors <a name = "authors"></a>
 
 - [@marefati](https://github.com/marefati110) - Idea & Initial work
+- marefati110@gmail.com
 
 See also the list of [contributors](https://github.com/marefati110/mysql-pydump/graphs/contributors) who participated in this project.
