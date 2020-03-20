@@ -1,12 +1,12 @@
-<a href="https://github.com/marefati110/mysql-pydump/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/marefati110/mysql-pydump?style=plastic"></a>
 <h3 align="center">mysql-pydump</h3>
 
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/marefati110/mysql-pydump/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/marefati110/mysql-pydump/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/marefati110/mysql-pydump)](https://github.com/marefati110/mysql-pydump/blob/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/marefati110/mysql-pydump)](https://github.com/marefati110/mysql-pydump/issues)
+[![GitHub forks](https://img.shields.io/github/forks/marefati110/mysql-pydump)](https://github.com/marefati110/mysql-pydump/network)
+[![GitHub stars](https://img.shields.io/github/stars/marefati110/mysql-pydump)](https://github.com/marefati110/mysql-pydump/stargazers)
 
 </div>
 
