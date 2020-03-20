@@ -76,8 +76,8 @@ def move(CONNECTION):
         else:
             file_format = '.sql'
 
-        cmd = 'mv {}{} {}/{}/{}/{}/{}'.format(CONNECTION['result'], file_format, path,
-                                              date_format[0], date_format[1], date_format[2], file_name())
+        cmd = 'mv {}{} {}/{}/{}/{}/"{}{}"'.format(CONNECTION['result'], file_format, path,
+                                              date_format[0], date_format[1], date_format[2], file_name(CONNECTION),file_format)
         subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)
 
         return True
@@ -91,8 +91,8 @@ def move(CONNECTION):
                 pass
         else:
             file_format = '.sql'
-        cmd = 'mv {}{} {}/{}'.format(CONNECTION['result'],
-                                     file_format, path, file_name())
+        cmd = 'mv {}{} {}/"{}{}"'.format(CONNECTION['result'],
+                                     file_format, path, file_name(CONNECTION),file_format)
         subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)
         return True
     else:
