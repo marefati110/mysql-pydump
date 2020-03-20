@@ -1,3 +1,4 @@
+<a href="https://github.com/marefati110/mysql-pydump/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/marefati110/mysql-pydump?style=plastic"></a>
 <h3 align="center">mysql-pydump</h3>
 
 <div align="center">
@@ -24,19 +25,17 @@
 - [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
 
-## 🧐 About <a name = "about"></a>
-d](#getting_started)
-22
-- [Deployment](#deployment)
+## 🧐 About <a name = "about"></a.
+    
 mysql_pydump allows you to easily backup your mysql database
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 ### Prerequisites
 
-you just need gave mysql or mariadb in your system
+you just need have mysql or mariadb in your system
 
-you can cheak like this
+you can check1 by this cammand
 ```
 mysql -u USERNAME -p
 ```
@@ -71,6 +70,9 @@ CONFIG = {
     "result": 'result_file_name',
     "path": '.', # path for save files
 }
+
+dump(CONFIG)
+
 ```
   for more detail read mysql-pydump <a href="">Document</a>
 
