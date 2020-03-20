@@ -7,6 +7,8 @@
 [![GitHub issues](https://img.shields.io/github/issues/marefati110/mysql-pydump)](https://github.com/marefati110/mysql-pydump/issues)
 [![GitHub forks](https://img.shields.io/github/forks/marefati110/mysql-pydump)](https://github.com/marefati110/mysql-pydump/network)
 [![GitHub stars](https://img.shields.io/github/stars/marefati110/mysql-pydump)](https://github.com/marefati110/mysql-pydump/stargazers)
+[![Documentation Status](https://readthedocs.org/projects/mysql-pydump/badge/?version=latest)](https://mysql-pydump.readthedocs.io/en/latest/?badge=latest)
+ 
 
 </div>
 
