@@ -1,5 +1,5 @@
-import subprocess
 import os
+import subprocess
 from datetime import datetime
 
 CONNECTION = {
@@ -7,16 +7,19 @@ CONNECTION = {
     "username": 'root',
     "password": 'hacer1999',
     "database": 'dbo',
-    'result': '1',
+    'result': 'TIME',
     "path": '.',
     'order_by': ['y', 'm', 'd'],
     'compress': 'True',
 
 }
 
+
 def sql_dump(CONNECTION):
+
     cmd = "mysqldump -h{} -u{} -p{} {} > {}.sql".format(
-        CONNECTION['host'], CONNECTION['username'], CONNECTION['password'], CONNECTION['database'], CONNECTION['result'])
+        CONNECTION['host'], CONNECTION['username'], CONNECTION['password'], CONNECTION['database'],
+        CONNECTION['result'])
     try:
         subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)
         return True
@@ -36,6 +39,13 @@ def compress(CONNECTION):
 
 
 def move(CONNECTION):
+
+    def file_name(CONNECTION):
+        if CONNECTION['result'] == 'TIME':
+            return str(datetime.now())
+        else:
+            return CONNECTION['result']
+
     if 'order_by' in CONNECTION.keys() and 'path' in CONNECTION.keys():
 
         path = os.getcwd() if CONNECTION['path'] == '.' else CONNECTION['path']
@@ -65,18 +75,33 @@ def move(CONNECTION):
                 pass
         else:
             file_format = '.sql'
-        cmd = 'mv {}{} {}/{}/{}/{}'.format(CONNECTION['result'], file_format, path,
-                                           date_format[0], date_format[1], date_format[2])
+
+        cmd = 'mv {}{} {}/{}/{}/{}/{}'.format(CONNECTION['result'], file_format, path,
+                                              date_format[0], date_format[1], date_format[2], file_name())
         subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)
 
         return True
 
     elif 'order_by' not in CONNECTION.keys() and 'path' in CONNECTION.keys():
-        pass
+
+        if 'compress' in CONNECTION.keys():
+            if CONNECTION['compress'] == 'True':
+                file_format = '.sql.gz'
+            else:
+                pass
+        else:
+            file_format = '.sql'
+        cmd = 'mv {}{} {}/{}'.format(CONNECTION['result'],
+                                     file_format, path, file_name())
+        subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)
+        return True
+    else:
+        return False
 
 
 def dump(CONNECTION, encryption=False):
     """
+
     CONNECTION = {
 
         "host": '127.0.0.1',
@@ -88,6 +113,7 @@ def dump(CONNECTION, encryption=False):
         'order_by': ['y', 'm', 'd'] // ['m', 'y', 'd'] , ['d', 'm', 'y'] , ... | (optional)
     }
     """
+
     result = sql_dump(CONNECTION)
     if result:
         if 'compress' in CONNECTION.keys():
@@ -95,16 +121,16 @@ def dump(CONNECTION, encryption=False):
                 result = compress(CONNECTION)
             else:
                 pass
-        elif encryption:
+        if encryption:
             pass
-        # if 'tree_directory' in CONNECTION.kyes():
-        #     if CONNECTION['compress'] == 'True':
         else:
             pass
-        move(CONNECTION)
+        result = move(CONNECTION)
         return True
     else:
         return False
 
 
-dump(CONNECTION)
+if __name__ == "__main__":
+
+    dump(CONNECTION)
