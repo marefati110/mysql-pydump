@@ -1,1 +1,1 @@
-# from .pydump import *
+from .pydump import dump

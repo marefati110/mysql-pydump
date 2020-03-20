@@ -1,18 +1,6 @@
 import os
 from datetime import datetime
 
-CONNECTION = {
-    "host": '127.0.0.1',
-    "username": 'root',
-    "password": 'hacer1999',
-    "database": 'dbo',
-    'result': 'ali',
-    "path": '.',
-    # 'order_by': ['y', 'm', 'd'],
-    'compress': 'False',
-
-}
-
 
 def sql_dump(CONNECTION):
 
@@ -71,12 +59,14 @@ def move(CONNECTION):
             if CONNECTION['compress'] == 'True':
                 file_format = '.sql.gz'
             else:
-                pass
+                file_format = '.sql'
         else:
             file_format = '.sql'
 
-        cmd = 'mv {}{} {}/{}/{}/{}/"{}{}"'.format(CONNECTION['result'], file_format, path,
-                                                  date_format[0], date_format[1], date_format[2], file_name(CONNECTION), file_format)
+        cmd = "mv {}{} {}/{}/{}/{}/'{}'{}".format(CONNECTION['result'], file_format, path,
+                                                  date_format[0], date_format[1], date_format[2], file_name(CONNECTION),
+                                                  file_format)
+        print(cmd)
         os.system(cmd)
 
         return True
@@ -127,12 +117,31 @@ def dump(CONNECTION, encryption=False):
             pass
         else:
             pass
-        result = move(CONNECTION)
+        move(CONNECTION)
         return True
     else:
         return False
 
-
 # if __name__ == "__main__":
 
-dump(CONNECTION)
+# dump(CONNECTION)
+
+
+# def sql_restore(CONNECTION, path):
+#     cmd = "mysql -h{} -u{} -p{} {} < {}/{}.sql".format(
+#         CONNECTION['host'], CONNECTION['username'], CONNECTION['password'], CONNECTION['database'],
+#         CONNECTION['result'])
+#     try:
+#         print(cmd)
+#         os.system(cmd)
+#         return True
+#     except Exception as e:
+#         print(e)
+#         return False
+
+# # sql_restore(CONNECTION)
+
+
+# def restore(CONNECTION):
+
+#     pass
