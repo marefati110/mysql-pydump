@@ -7,10 +7,10 @@ CONNECTION = {
     "username": 'root',
     "password": 'hacer1999',
     "database": 'dbo',
-    'result': 'TIME',
+    'result': 'ali',
     "path": '.',
-    'order_by': ['y', 'm', 'd'],
-    'compress': 'True',
+    # 'order_by': ['y', 'm', 'd'],
+    'compress': 'False',
 
 }
 
@@ -77,23 +77,26 @@ def move(CONNECTION):
             file_format = '.sql'
 
         cmd = 'mv {}{} {}/{}/{}/{}/"{}{}"'.format(CONNECTION['result'], file_format, path,
-                                              date_format[0], date_format[1], date_format[2], file_name(CONNECTION),file_format)
+                                                  date_format[0], date_format[1], date_format[2], file_name(CONNECTION), file_format)
         subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)
 
         return True
 
     elif 'order_by' not in CONNECTION.keys() and 'path' in CONNECTION.keys():
+        path = os.getcwd() if CONNECTION['path'] == '.' else CONNECTION['path']
 
         if 'compress' in CONNECTION.keys():
             if CONNECTION['compress'] == 'True':
                 file_format = '.sql.gz'
             else:
-                pass
+                file_format = '.sql'
         else:
             file_format = '.sql'
+
         cmd = 'mv {}{} {}/"{}{}"'.format(CONNECTION['result'],
-                                     file_format, path, file_name(CONNECTION),file_format)
+                                         file_format, path, file_name(CONNECTION), file_format)
         subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)
+        
         return True
     else:
         return False
