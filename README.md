@@ -13,11 +13,6 @@
 </div>
 
 ---
-
-<p align="center"> Few lines describing your project.
-    <br> 
-</p>
-
 ## 📝 Table of Contents
 
 - [About](#about)
