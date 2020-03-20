@@ -1,15 +1,15 @@
 from distutils.core import setup
 
 setup(
-    name='mysql_pydump',
+    name='mysql-pydump',
     packages=['mysql_pydump'],
-    version='0.1',
+    version='0.1.1',
     license='MIT',
     description='mysql_pydump allows you to easily backup your mysql database',
     author='Ali Marefati',
     author_email='marefati110@gmail.com',
     url='https://github.com/marefati110/mysql-pydump',
-    download_url='https://github.com/marefati110/mysql-pydump/archive/0.1.tar.gz',
+    download_url='https://github.com/marefati110/mysql-pydump/archive/0.1.1.tar.gz',
     keywords=['mysql', 'mariadb', 'python', 'backup', 'dump', 'rstore', 'mysql_pydump'],
     classifiers=[
         'Development Status :: 3 - Alpha',
