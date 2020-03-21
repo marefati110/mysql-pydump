@@ -7,15 +7,12 @@
 [![GitHub issues](https://img.shields.io/github/issues/marefati110/mysql-pydump)](https://github.com/marefati110/mysql-pydump/issues)
 [![GitHub forks](https://img.shields.io/github/forks/marefati110/mysql-pydump)](https://github.com/marefati110/mysql-pydump/network)
 [![GitHub stars](https://img.shields.io/github/stars/marefati110/mysql-pydump)](https://github.com/marefati110/mysql-pydump/stargazers)
+[![Documentation Status](https://readthedocs.org/projects/mysql-pydump/badge/?version=latest)](https://mysql-pydump.readthedocs.io/en/latest/?badge=latest)
+ 
 
 </div>
 
 ---
-
-<p align="center"> Few lines describing your project.
-    <br> 
-</p>
-
 ## 📝 Table of Contents
 
 - [About](#about)
@@ -79,5 +76,6 @@ dump(CONFIG)
 ## ✍️ Authors <a name = "authors"></a>
 
 - [@marefati](https://github.com/marefati110) - Idea & Initial work
+- marefati110@gmail.com
 
 See also the list of [contributors](https://github.com/marefati110/mysql-pydump/graphs/contributors) who participated in this project.
