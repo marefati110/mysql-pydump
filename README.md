@@ -71,7 +71,7 @@ CONFIG = {
 dump(CONFIG)
 
 ```
-  for more detail read mysql-pydump <a href="">Document</a>
+  for more detail read mysql-pydump <a href="https://github.com/marefati110/mysql-pydump/blob/master/docs/source/index.rst">Document</a>
 
 ## ✍️ Authors <a name = "authors"></a>
 
