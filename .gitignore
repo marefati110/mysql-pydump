@@ -130,3 +130,5 @@ dmypy.json
 .pyre/
 .idea/
 .sql
+/2020/
+/docs/
