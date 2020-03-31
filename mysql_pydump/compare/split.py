@@ -29,3 +29,17 @@ def insert_check_and_split(result: list) -> list:
         else:
             pass
     return output
+
+
+def filter_by_new(new: tuple, old: tuple) -> tuple:
+    new = list(new)
+    old = list(old)
+
+    for elm in old:
+        if elm in new:
+            new.remove(elm)
+        elif elm not in new:
+            pass
+        else:
+            pass
+    return tuple(new)
